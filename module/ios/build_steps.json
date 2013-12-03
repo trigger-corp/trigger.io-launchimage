@@ -1,0 +1,90 @@
+[
+	{
+		"do": {
+			"copy_file_from_src": {
+				"filename": "{{modules.launchimage.config.ios.320x480}}",
+				"dest": "Default~iphone.png"
+			}
+		}
+	},
+	{
+		"do": {
+			"copy_file_from_src": {
+				"filename": "{{modules.launchimage.config.ios.640x960}}",
+				"dest": "Default@2x~iphone.png"
+			}
+		}
+	},
+	{
+		"do": {
+			"copy_file_from_src": {
+				"filename": "{{modules.launchimage.config.ios.640x1136}}",
+				"dest": "Default-568h@2x~iphone.png"
+			}
+		}
+	},
+	{
+		"do": {
+			"copy_file_from_src": {
+				"filename": "{{modules.launchimage.config.ios.768x1004}}",
+				"dest": "Default-Portrait~ipad.png"
+			}
+		}
+	},
+	{
+		"do": {
+			"copy_file_from_src": {
+				"filename": "{{modules.launchimage.config.ios.1024x748}}",
+				"dest": "Default-Landscape~ipad.png"
+			}
+		}
+	},
+	{
+		"do": {
+			"copy_file_from_src": {
+				"filename": "{{modules.launchimage.config.ios.1536x2008}}",
+				"dest": "Default-Portrait@2x~ipad.png"
+			}
+		}
+	},
+	{
+		"do": {
+			"copy_file_from_src": {
+				"filename": "{{modules.launchimage.config.ios.2048x1496}}",
+				"dest": "Default-Landscape@2x~ipad.png"
+			}
+		}
+	},
+	{
+		"do": {
+			"copy_file_from_src": {
+				"filename": "{{modules.launchimage.config.ios.768x1024}}",
+				"dest": "Default-700-Portrait~ipad.png"
+			}
+		}
+	},
+	{
+		"do": {
+			"copy_file_from_src": {
+				"filename": "{{modules.launchimage.config.ios.1024x768}}",
+				"dest": "Default-700-Landscape~ipad.png"
+			}
+		}
+	},
+	{
+		"do": {
+			"copy_file_from_src": {
+				"filename": "{{modules.launchimage.config.ios.1536x2048}}",
+				"dest": "Default-700-Portrait@2x~ipad.png"
+			}
+		}
+	},
+	{
+		"do": {
+			"copy_file_from_src": {
+				"filename": "{{modules.launchimage.config.ios.2048x1536}}",
+				"dest": "Default-700-Landscape@2x~ipad.png"
+			}
+		}
+	}
+]
