@@ -1,25 +1,23 @@
 {
-	"modules": {
-		"launchimage": {
-			"version": "2.0",
-			"config": {
-				"ios": {
-					"320x480": "fixtures/launchimage/320x480.png",
-					"640x960": "fixtures/launchimage/640x960.png",
-					"640x1136": "fixtures/launchimage/640x1136.png",
-					"768x1004": "fixtures/launchimage/768x1004.png",
-					"1536x2008": "fixtures/launchimage/1536x2008.png",
-					"1024x748": "fixtures/launchimage/1024x748.png",
-					"2048x1496": "fixtures/launchimage/2048x1496.png",
-					"768x1024": "fixtures/launchimage/768x1024.png",
-					"1536x2048": "fixtures/launchimage/1536x2048.png",
-					"1024x768": "fixtures/launchimage/1024x768.png",
-					"2048x1536": "fixtures/launchimage/2048x1536.png"
-				},
-				"android": "fixtures/launchimage/android.png",
-				"android-landscape": "fixtures/launchimage/android-landscape.png",
-				"background-color": "#AA3300"
-			}
+	"this_module": {
+		"config": {
+			"ios": {
+				"320x480": "fixtures/launchimage/320x480.png",
+				"640x960": "fixtures/launchimage/640x960.png",
+				"640x1136": "fixtures/launchimage/640x1136.png",
+				"768x1004": "fixtures/launchimage/768x1004.png",
+				"1536x2008": "fixtures/launchimage/1536x2008.png",
+				"1024x748": "fixtures/launchimage/1024x748.png",
+				"2048x1496": "fixtures/launchimage/2048x1496.png",
+				"768x1024": "fixtures/launchimage/768x1024.png",
+				"1536x2048": "fixtures/launchimage/1536x2048.png",
+				"1024x768": "fixtures/launchimage/1024x768.png",
+				"2048x1536": "fixtures/launchimage/2048x1536.png"
+			},
+			"android": "fixtures/launchimage/android.png",
+			"android-landscape": "fixtures/launchimage/android-landscape.png",
+			"background-color": "#AA3300"
 		}
-	}
+	},
+	"modules": {}
 }
