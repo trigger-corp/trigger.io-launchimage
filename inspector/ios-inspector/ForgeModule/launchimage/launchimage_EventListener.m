@@ -20,11 +20,15 @@
 }
 
 + (void)applicationWillResume:(UIApplication *)application {
-	[launchimage_Util hideLaunchImage];
+    if (![launchimage_Util haveAppLauncher]) {
+        [launchimage_Util hideLaunchImage];
+    }
 }
 
 + (void)applicationDidEnterBackground:(UIApplication *)application {
-	[launchimage_Util showLaunchImage];
+    if (![launchimage_Util haveAppLauncher]) {
+       	[launchimage_Util showLaunchImage];
+    } 
 }
 
 + (void)applicationIsReloading {

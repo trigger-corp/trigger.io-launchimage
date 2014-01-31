@@ -120,4 +120,13 @@ UIImageView *launchImage;
 	});
 }
 
+// iOS 7 introduced a new app switcher which does not provide aesthetically
+// pleasing results and interferes with other modules when we show the
+// launchimage on app resume
++ (bool) haveAppLauncher {
+    NSString *required = @"7.0";
+    NSString *current = [[UIDevice currentDevice] systemVersion];
+    return [current compare:required options:NSNumericSearch] != NSOrderedAscending;
+}
+
 @end
