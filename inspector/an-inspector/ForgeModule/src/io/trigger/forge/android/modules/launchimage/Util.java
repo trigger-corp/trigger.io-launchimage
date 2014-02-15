@@ -14,6 +14,51 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+/**
+ * Options for scaling the launch image.
+ */
+enum BackgroundSize {
+	/**
+     * Center the image in the view. 
+	 * Perform no scaling if image is smaller than the screen else 
+	 * the image will be proportionally scaled down to fit the screen
+     */
+	AUTO("auto"), 
+	/**
+     * Scale the image uniformly (maintain the image's aspect ratio) so
+     * that both dimensions (width and height) of the image will be equal
+     * to or larger than the corresponding dimension of the screen.
+     * The image is then centered in the view.
+     */
+    COVER("cover");
+    
+    private final String value;
+
+    private BackgroundSize(final String value) {
+        this.value = value;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        return getValue();
+    }
+    
+    public static BackgroundSize parseBackgroundSize(String backgroundSizeValue) {
+    	if (backgroundSizeValue != null) {
+    		for (BackgroundSize backgroundSize : BackgroundSize.values()) {
+    			if (backgroundSizeValue.equalsIgnoreCase(backgroundSize.getValue())) {
+    				return backgroundSize;
+    			}
+    		}
+        }
+    	return null;
+   }
+}
+
 public class Util {
 	private static Dialog launchImage = null;
 
@@ -31,10 +76,26 @@ public class Util {
 		}
 		launchImage.setContentView(layout);
 		launchImage.setCancelable(false);
-		
+		BackgroundSize backgroundSize = null;
+		try {
+			backgroundSize = BackgroundSize.parseBackgroundSize(ForgeApp.configForPlugin("launchimage").get("background-size").getAsString());
+		} catch (Exception e) {
+			// do nothing
+		} finally {
+			// background-size parse failure or unknown value provided, default to auto
+			if (backgroundSize == null) {
+				backgroundSize = BackgroundSize.AUTO;
+			}
+		}
 		ImageView splashImage = new ImageView(activity);
-		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-		params.addRule(RelativeLayout.CENTER_IN_PARENT);
+		RelativeLayout.LayoutParams params;
+		if (backgroundSize == BackgroundSize.COVER) {
+			params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+			splashImage.setScaleType(ScaleType.CENTER_CROP);
+		} else if (backgroundSize == BackgroundSize.AUTO) {
+			params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+			params.addRule(RelativeLayout.CENTER_IN_PARENT);
+		}
 		splashImage.setLayoutParams(params);
 		layout.addView(splashImage);
 		try {

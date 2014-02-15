@@ -97,6 +97,11 @@
 			"required": false,
 			"description": "The color to be shown behind the image if it doesn't fit the screen exactly - e.g. \"#303045\"",
 			"pattern": "^#[\\da-fA-F]{6}$"
+		},
+		"background-size": {
+			"required": false,
+			"description": "Options for scaling the launch image which mimics the behaviour similar to the background-size property in CSS3. Options are \"auto\" or \"cover\".",
+			"type": "string"
 		}
 	}
 }
