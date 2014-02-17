@@ -16,7 +16,8 @@
 			},
 			"android": "fixtures/launchimage/android.png",
 			"android-landscape": "fixtures/launchimage/android-landscape.png",
-			"background-color": "#AA3300"
+			"background-color": "#AA3300",
+			"background-size": "auto"
 		}
 	},
 	"modules": {}
