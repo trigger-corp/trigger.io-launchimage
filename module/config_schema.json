@@ -101,7 +101,8 @@
 		"background-size": {
 			"required": false,
 			"description": "Options for scaling the launch image which mimics the behaviour similar to the background-size property in CSS3. Options are \"auto\" or \"cover\".",
-			"type": "string"
+			"type": "string",
+			"enum": ["auto", "cover"]
 		}
 	}
 }
