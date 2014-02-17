@@ -1,5 +1,5 @@
 {
-    "changes": "* Added display logic for the background size configuration property", 
+    "changes": "* New configuration option: `background-size`", 
     "description": "Images to display while your app is loading.\n\nSet the image to be displayed in the short time between launching your app and the webview being loaded and ready for the user.", 
     "min_platform_version": "v2.1.0", 
     "namespace": "launchimage", 

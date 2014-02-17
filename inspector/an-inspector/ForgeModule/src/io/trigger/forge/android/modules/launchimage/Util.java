@@ -12,6 +12,7 @@ import android.os.Build;
 import android.view.Display;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 import android.widget.RelativeLayout;
 
 /**
@@ -88,11 +89,11 @@ public class Util {
 			}
 		}
 		ImageView splashImage = new ImageView(activity);
-		RelativeLayout.LayoutParams params;
+		RelativeLayout.LayoutParams params = null;
 		if (backgroundSize == BackgroundSize.COVER) {
 			params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 			splashImage.setScaleType(ScaleType.CENTER_CROP);
-		} else if (backgroundSize == BackgroundSize.AUTO) {
+		} else {
 			params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 			params.addRule(RelativeLayout.CENTER_IN_PARENT);
 		}
