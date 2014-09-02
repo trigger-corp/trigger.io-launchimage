@@ -16,14 +16,14 @@ UIImageView *launchImage;
 	if ([ForgeViewController isIPad]) {
 		if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
 			if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
-				if ([[UIScreen mainScreen] scale] == 2) {
+				if ([[UIScreen mainScreen] scale] >= 2) {
 					launchImage.image = [UIImage imageNamed:@"Default-700-Landscape@2x~ipad.png"];
 				} else {
 					launchImage.image = [UIImage imageNamed:@"Default-700-Landscape~ipad.png"];
 				}
 				launchImage.frame = CGRectMake(0.0f, 0.0f, 1024.0f, 768.0f);
 			} else if (toInterfaceOrientation == UIInterfaceOrientationPortrait || toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
-				if ([[UIScreen mainScreen] scale] == 2) {
+				if ([[UIScreen mainScreen] scale] >= 2) {
 					launchImage.image = [UIImage imageNamed:@"Default-700-Portrait@2x~ipad.png"];
 				} else {
 					launchImage.image = [UIImage imageNamed:@"Default-700-Portrait~ipad.png"];
@@ -32,7 +32,7 @@ UIImageView *launchImage;
 			}
 		} else {
 			if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
-				if ([[UIScreen mainScreen] scale] == 2) {
+				if ([[UIScreen mainScreen] scale] >= 2) {
 					launchImage.image = [UIImage imageNamed:@"Default-Landscape@2x~ipad.png"];
 				} else {
 					launchImage.image = [UIImage imageNamed:@"Default-Landscape~ipad.png"];
@@ -43,7 +43,7 @@ UIImageView *launchImage;
 					launchImage.frame = CGRectMake(0.0f, 0.0f, 1024.0f, 748.0f);
 				}
 			} else if (toInterfaceOrientation == UIInterfaceOrientationPortrait || toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
-				if ([[UIScreen mainScreen] scale] == 2) {
+				if ([[UIScreen mainScreen] scale] >= 2) {
 					launchImage.image = [UIImage imageNamed:@"Default-Portrait@2x~ipad.png"];
 				} else {
 					launchImage.image = [UIImage imageNamed:@"Default-Portrait~ipad.png"];
@@ -60,7 +60,7 @@ UIImageView *launchImage;
 		float height = 480.0f;
 		float x = 0.0f;
 		float y = 0.0f;
-		if ([[UIScreen mainScreen] scale] == 2) {
+		if ([[UIScreen mainScreen] scale] >= 2) {
 			if ([[UIScreen mainScreen] bounds].size.height == 568) {
 				launchImage.image = [UIImage imageNamed:@"Default-568h@2x~iphone.png"];
 				height = 568.0f;
