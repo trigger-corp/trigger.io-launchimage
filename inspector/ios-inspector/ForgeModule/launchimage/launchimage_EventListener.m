@@ -12,8 +12,6 @@
 @implementation launchimage_EventListener
 
 + (void)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSLog(@"TODO SCALE: %f", [[UIScreen mainScreen] scale]);
-    NSLog(@"TODO NATIVESCALE: %f", [[UIScreen mainScreen] nativeScale]);
 	[launchimage_Util showLaunchImage];
 }
 
