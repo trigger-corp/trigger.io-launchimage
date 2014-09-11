@@ -25,6 +25,18 @@
 					"_filepicker": true,
 					"description": "Retina, 4 inch iPhone/iPod devices"
 				},
+				"750x1214": {
+					"required": true,
+					"type": "string",
+					"_filepicker": true,
+					"description": "Retina, 4.7 inch iPhone 6 device"
+				},
+				"1242x2208": {
+					"required": true,
+					"type": "string",
+					"_filepicker": true,
+					"description": "Retina, 5.5 inch iPhone 6 plus device"
+				},
 				"768x1004": {
 					"required": true,
 					"type": "string",
