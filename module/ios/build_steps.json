@@ -35,7 +35,7 @@
 		"do": {
 			"copy_file_from_src": {
 				"filename": "{{modules.launchimage.config.ios.1242x2208}}",
-				"dest": "Default-736h@2x~iphone.png"
+				"dest": "Default-736h@3x~iphone.png"
 			}
 		}
 	},
