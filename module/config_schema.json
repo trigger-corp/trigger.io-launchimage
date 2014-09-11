@@ -25,7 +25,7 @@
 					"_filepicker": true,
 					"description": "Retina, 4 inch iPhone/iPod devices"
 				},
-				"750x1214": {
+				"750x1334": {
 					"required": true,
 					"type": "string",
 					"_filepicker": true,
