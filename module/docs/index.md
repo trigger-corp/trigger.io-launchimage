@@ -23,6 +23,12 @@ iPhone Retina
 iPhone Retina 4
 :	Path to a 640x1136px image. Used as the launch image on retina for iDevices with a 4 inch screen (e.g. iPhone 5, 5th generation iPod).
 
+iPhone Retina 6
+:	Path to a 750x1334px image. Used as the launch image on retina for iDevices with a 4.7 inch screen (e.g. iPhone 6).
+
+iPhone Retina 6 Plus
+:	Path to a 1242x2208px image. Used as the launch image on retina for iDevices with a 5.5 inch screen (e.g. iPhone 6 Plus).
+
 iPad
 :	Path to a 768x1004px image. Used as the launch image on retina for non-retina iPads when in portrait.
 
@@ -39,16 +45,16 @@ iPad Landscape Retina
 
 Android, Android Landscape
 :	Launchimages for Android devices.
-	On Android the image will be displayed according to the **Background Size** 
-	configuration option. A **Background Size** value of ``"auto"`` will result 
-	in the image being displayed as centered while the first page is loading. 
-	As Android device sizes vary a pixel perfect loading image cannot be used. 
-	The image will be proportionally scaled down to fit the screen if necessary. 
-	A **Background Size** value of ``"cover"`` will result in the image 
+	On Android the image will be displayed according to the **Background Size**
+	configuration option. A **Background Size** value of ``"auto"`` will result
+	in the image being displayed as centered while the first page is loading.
+	As Android device sizes vary a pixel perfect loading image cannot be used.
+	The image will be proportionally scaled down to fit the screen if necessary.
+	A **Background Size** value of ``"cover"`` will result in the image
 	being uniformly scaled by maintaining the image's aspect ratio so
 	that both dimensions (width and height) of the image will be equal
 	to or larger than the screen. The image is then centered in the view.
-	The solid color to use behind this launch image can be configured with 
+	The solid color to use behind this launch image can be configured with
 	the **Background Color** configuration option.
 
 > ::Note:: Both Android images must be defined for Android builds.
@@ -58,7 +64,7 @@ Background Color
 	a six digit hex color code - e.g. ``"#303045"``.
 
 Background Size
-:	Options for scaling the launch image which mimics the behaviour similar to the background-size 
+:	Options for scaling the launch image which mimics the behaviour similar to the background-size
 	property in CSS3. Options are ``"auto"`` or ``"cover"``.
 
 Hide Manually
