@@ -64,6 +64,12 @@ UIImageView *launchImage;
 			if ([[UIScreen mainScreen] bounds].size.height == 568) {
 				launchImage.image = [UIImage imageNamed:@"Default-568h@2x~iphone.png"];
 				height = 568.0f;
+			} else if ([[UIScreen mainScreen] bounds].size.height == 667) {
+				launchImage.image = [UIImage imageNamed:@"Default-667h@2x~iphone.png"];
+				height = 667.0f;
+			} else if ([[UIScreen mainScreen] bounds].size.height == 736) {
+				launchImage.image = [UIImage imageNamed:@"Default-736h@3x~iphone.png"];
+				height = 736.0f;
 			} else {
 				launchImage.image = [UIImage imageNamed:@"Default@2x~iphone.png"];
 			}
