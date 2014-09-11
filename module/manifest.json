@@ -1,8 +1,8 @@
 {
-    "changes": "* Support arm64 devices running iOS 8", 
-    "description": "Images to display while your app is loading.\n\nSet the image to be displayed in the short time between launching your app and the webview being loaded and ready for the user.", 
-    "min_platform_version": "v2.1.0", 
-    "namespace": "launchimage", 
-    "platform_version": "v2.2.0", 
-    "version": "2.5"
+    "changes": "* Support iPhone 6 and 6 Plus screen sizes",
+    "description": "Images to display while your app is loading.\n\nSet the image to be displayed in the short time between launching your app and the webview being loaded and ready for the user.",
+    "min_platform_version": "v2.1.0",
+    "namespace": "launchimage",
+    "platform_version": "v2.2.0",
+    "version": "2.6"
 }
