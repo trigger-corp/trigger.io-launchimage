@@ -83,7 +83,7 @@
 		"do": {
 			"copy_file_from_src": {
 				"filename": "{{modules.launchimage.config.ios.2048x1496}}",
-				"dest": "LaunchImage-Landscape@2x~ipad.png.png"
+				"dest": "LaunchImage-Landscape@2x~ipad.png"
 			}
 		}
 	},
