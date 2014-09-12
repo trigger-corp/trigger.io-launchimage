@@ -102,8 +102,8 @@ UIImageView *launchImage;
 	dispatch_async(dispatch_get_main_queue(), ^{
 		UIViewController *c = [[UIViewController alloc] init];
 		
-		[[[ForgeApp sharedApp] viewController] presentModalViewController:c animated:NO];
-		[[[ForgeApp sharedApp] viewController] dismissModalViewControllerAnimated:NO];
+		[[[ForgeApp sharedApp] viewController] presentViewController:c animated:NO completion:nil];
+        [[[ForgeApp sharedApp] viewController] dismissViewControllerAnimated:NO completion:nil];
 	});
 	
 	[launchImage setHidden:NO];
@@ -117,11 +117,11 @@ UIImageView *launchImage;
 	// Make sure we are at the correct orientation
 	// Hack to work around setOrientation being a private method
 	dispatch_async(dispatch_get_main_queue(), ^{
-		if ([[ForgeApp sharedApp] viewController].modalViewController == nil) {
+		if ([[ForgeApp sharedApp] viewController].presentedViewController == nil) {
 			UIViewController *c = [[UIViewController alloc] init];
 		
-			[[[ForgeApp sharedApp] viewController] presentModalViewController:c animated:NO];
-			[[[ForgeApp sharedApp] viewController] dismissModalViewControllerAnimated:NO];
+            [[[ForgeApp sharedApp] viewController] presentViewController:c animated:NO completion:nil];
+			[[[ForgeApp sharedApp] viewController] dismissViewControllerAnimated:NO completion:nil];
 		}
 	});
 }
