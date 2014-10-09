@@ -1,8 +1,8 @@
 {
-    "changes": "* Fixed: Setting `hide-manually: true` would fail to keep launchimage visible after app launch.",
+    "changes": "* Fixed: Launchimage behavior differs between iPhone 6 hardware vs simulator.",
     "description": "Images to display while your app is loading.\n\nSet the image to be displayed in the short time between launching your app and the webview being loaded and ready for the user.",
-    "min_platform_version": "v2.2.3",
+    "min_platform_version": "v2.2.5",
     "namespace": "launchimage",
-    "platform_version": "v2.2.3",
-    "version": "2.7"
+    "platform_version": "v2.2.5",
+    "version": "2.8"
 }
