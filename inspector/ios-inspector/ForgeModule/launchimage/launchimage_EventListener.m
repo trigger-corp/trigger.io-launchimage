@@ -9,26 +9,19 @@
 #import "launchimage_EventListener.h"
 #import "launchimage_Util.h"
 
+bool initialStartup = true;
+
 @implementation launchimage_EventListener
 
 + (void)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	[launchimage_Util showLaunchImage];
+    initialStartup = true;
 }
 
-+ (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-	[launchimage_Util updateLaunchImageOrientation:toInterfaceOrientation];
-}
-
-+ (void)applicationWillResume:(UIApplication *)application {
-    if (![launchimage_Util haveAppLauncher]) {
-        [launchimage_Util hideLaunchImage];
++ (void)applicationDidBecomeActive:(UIApplication *)application {
+    if (initialStartup) {
+        [launchimage_Util showLaunchImage];
     }
-}
-
-+ (void)applicationDidEnterBackground:(UIApplication *)application {
-    if (![launchimage_Util haveAppLauncher]) {
-       	[launchimage_Util showLaunchImage];
-    } 
+    initialStartup = false;
 }
 
 + (void)applicationIsReloading {

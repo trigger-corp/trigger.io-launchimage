@@ -2,120 +2,32 @@
 	{
 		"do": {
 			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.320x480}}",
-				"dest": "Launchimage.png"
+				"filename": "{{modules.launchimage.config.ios.wC_hC}}",
+				"dest": "wC_hC.png"
 			}
 		}
 	},
 	{
 		"do": {
 			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.640x960}}",
-				"dest": "LaunchImage@2x.png"
+				"filename": "{{modules.launchimage.config.ios.wR_hC}}",
+				"dest": "wR_hC.png"
 			}
 		}
 	},
 	{
 		"do": {
 			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.640x960}}",
-				"dest": "LaunchImage-700@2x.png"
+				"filename": "{{modules.launchimage.config.ios.wC_hR}}",
+				"dest": "wC_hR.png"
 			}
 		}
 	},
 	{
 		"do": {
 			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.640x1136}}",
-				"dest": "LaunchImage-568h@2x.png"
-			}
-		}
-	},
-	{
-		"do": {
-			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.640x1136}}",
-				"dest": "LaunchImage-700-568h@2x.png"
-			}
-		}
-	},
-	{
-		"do": {
-			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.750x1334}}",
-				"dest": "LaunchImage-800-667h@2x.png"
-			}
-		}
-	},
-	{
-		"do": {
-			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.1242x2208}}",
-				"dest": "LaunchImage-800-Portrait-736h@3x.png"
-			}
-		}
-	},
-	{
-		"do": {
-			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.768x1004}}",
-				"dest": "Launchimage-Portrait~ipad.png"
-			}
-		}
-	},
-	{
-		"do": {
-			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.1024x748}}",
-				"dest": "LaunchImage-Landscape~ipad.png"
-			}
-		}
-	},
-	{
-		"do": {
-			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.1536x2008}}",
-				"dest": "LaunchImage-Portrait@2x~ipad.png"
-			}
-		}
-	},
-	{
-		"do": {
-			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.2048x1496}}",
-				"dest": "LaunchImage-Landscape@2x~ipad.png"
-			}
-		}
-	},
-	{
-		"do": {
-			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.768x1024}}",
-				"dest": "LaunchImage-700-Portrait~ipad.png"
-			}
-		}
-	},
-	{
-		"do": {
-			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.1024x768}}",
-				"dest": "LaunchImage-700-Landscape~ipad.png"
-			}
-		}
-	},
-	{
-		"do": {
-			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.1536x2048}}",
-				"dest": "LaunchImage-700-Portrait@2x~ipad.png"
-			}
-		}
-	},
-	{
-		"do": {
-			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.2048x1536}}",
-				"dest": "LaunchImage-700-Landscape@2x~ipad.png"
+				"filename": "{{modules.launchimage.config.ios.wR_hR}}",
+				"dest": "wR_hR.png"
 			}
 		}
 	}

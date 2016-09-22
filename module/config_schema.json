@@ -3,118 +3,78 @@
 	"additionalProperties": false,
 	"properties": {
 		"ios": {
+			"_order": 1,
 			"required": false,
 			"type": "object",
 			"additionalProperties": false,
 			"properties": {
-				"320x480": {
+				"wC_hC": {
 					"required": true,
 					"type": "string",
 					"_filepicker": true,
-					"description": "Non-retina, 3.5 inch iPhone/iPod devices"
+					"description": "Width: Compact, Height: Compact. Recommended size: 1334x750 (iPhone, landscape)"
 				},
-				"640x960": {
+				"wR_hC": {
 					"required": true,
 					"type": "string",
 					"_filepicker": true,
-					"description": "Retina, 3.5 inch iPhone/iPod devices"
+					"description": "Width: Regular, Height: Compact. Recommended size: 1920x1080 (iPhone Plus, landscape)"
 				},
-				"640x1136": {
+				"wC_hR": {
 					"required": true,
 					"type": "string",
 					"_filepicker": true,
-					"description": "Retina, 4 inch iPhone/iPod devices"
+					"description": "Width: Compact, Height: Regular. Recommended size: 1080x1920 (iPhone & iPhone Plus, portrait)"
 				},
-				"750x1334": {
+				"wR_hR": {
 					"required": true,
 					"type": "string",
 					"_filepicker": true,
-					"description": "Retina, 4.7 inch iPhone 6 device"
-				},
-				"1242x2208": {
-					"required": true,
-					"type": "string",
-					"_filepicker": true,
-					"description": "Retina, 5.5 inch iPhone 6 plus device"
-				},
-				"768x1004": {
-					"required": true,
-					"type": "string",
-					"_filepicker": true,
-					"description": "Non-retina, portrait iPad devices running iOS<7"
-				},
-				"1536x2008": {
-					"required": true,
-					"type": "string",
-					"_filepicker": true,
-					"description": "Retina, portrait iPad devices running iOS<7"
-				},
-				"1024x748": {
-					"required": true,
-					"type": "string",
-					"_filepicker": true,
-					"description": "Non-retina, landscape iPad devices running iOS<7"
-				},
-				"2048x1496": {
-					"required": true,
-					"type": "string",
-					"_filepicker": true,
-					"description": "Retina, landscape iPad devices running iOS<7"
-				},
-				"768x1024": {
-					"required": true,
-					"type": "string",
-					"_filepicker": true,
-					"description": "Non-retina, portrait iPad devices running iOS7"
-				},
-				"1536x2048": {
-					"required": true,
-					"type": "string",
-					"_filepicker": true,
-					"description": "Retina, portrait iPad devices running iOS7"
-				},
-				"1024x768": {
-					"required": true,
-					"type": "string",
-					"_filepicker": true,
-					"description": "Non-retina, landscape iPad devices running iOS7"
-				},
-				"2048x1536": {
-					"required": true,
-					"type": "string",
-					"_filepicker": true,
-					"description": "Retina, landscape iPad devices running iOS7"
+					"description": "Width: Regular, Height: Regular. Recommended size: 2732x2048 (iPad, portrait and landscape)"
 				}
 			}
 		},
 		"android": {
+			"_order": 2,
 			"required": false,
-			"type": "string",
-			"dependencies": "android-landscape",
-			"_filepicker": true
-		},
-		"android-landscape": {
-			"required": false,
-			"type": "string",
-			"dependencies": "android",
-			"_filepicker": true
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"portrait": {
+					"_order": 1,
+					"required": false,
+					"type": "string",
+					"dependencies": "landscape",
+					"_filepicker": true
+				},
+				"landscape": {
+					"_order": 2,
+					"required": false,
+					"type": "string",
+					"dependencies": "portrait",
+					"_filepicker": true
+				},
+				"background-size": {
+					"_order": 4,
+					"required": false,
+					"description": "Options for scaling the launch image which mimics the behaviour similar to the background-size property in CSS3. Options are \"auto\" or \"cover\".",
+					"type": "string",
+					"enum": ["auto", "cover"]
+				},
+				"background-color": {
+					"_order": 5,
+					"type": "string",
+					"required": false,
+					"description": "The color to be shown behind the image if it doesn't fit the screen exactly - e.g. \"#303045\"",
+					"pattern": "^#[\\da-fA-F]{6}$"
+				}
+			}
 		},
 		"hide-manually": {
+			"_order": 6,
 			"description": "If this is enabled then it is your responsiblity to hide the launch image once your app is ready. See the API docs for more details.",
 			"required": false,
 			"type": "boolean"
-		},
-		"background-color": {
-			"type": "string",
-			"required": false,
-			"description": "The color to be shown behind the image if it doesn't fit the screen exactly - e.g. \"#303045\"",
-			"pattern": "^#[\\da-fA-F]{6}$"
-		},
-		"background-size": {
-			"required": false,
-			"description": "Options for scaling the launch image which mimics the behaviour similar to the background-size property in CSS3. Options are \"auto\" or \"cover\".",
-			"type": "string",
-			"enum": ["auto", "cover"]
 		}
 	}
 }

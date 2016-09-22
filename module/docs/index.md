@@ -11,37 +11,30 @@ initialize itself, set up [native topbars](/modules/topbar/current/docs/index.ht
 
 The majority of the configuration for the is paths to images at various resolutions. All launch images must be placed in your ``src`` directory. Paths to your launchimages should be specified relative to your `src` directory.
 
-> ::Note:: Use PNG format for your launch images, as it is required on at least iOS and your app
-may not be submittable to the App Store otherwise.
 
-iPhone
-:	Path to 320x480px image. Used as the launch image on non-retina iDevices (e.g. iPhone 3GS, 3rd generation iPod).
+### iOS
 
-iPhone Retina
-:	Path to a 640x960px image. Used as the launch image on retina iDevices (e.g. iPhone 4).
+> ::Note:: The old Launch Image schema and sizes are no longer supported by Apple.
+>
+> Instead of requiring a separate bitmap matching the resolution of each available iOS device Apple have introduced the notion of "size classes" which reduces the total number of images required to four.
+>
+> For more information on size classes, please read: [A Size Class Reference Guide](http://useyourloaf.com/blog/size-classes/)
 
-iPhone Retina 4
-:	Path to a 640x1136px image. Used as the launch image on retina for iDevices with a 4 inch screen (e.g. iPhone 5, 5th generation iPod).
+wC_hC
+:	Path to image for Compact width and Compact height size class. Used as the launch image on iPhone devices in landscape orientation. (Recommended size: 1334x750px)
 
-iPhone Retina 6
-:	Path to a 750x1334px image. Used as the launch image on retina for iDevices with a 4.7 inch screen (e.g. iPhone 6).
+wR_hC
+:	Path to image for Regular width and Compact height size class. Used as the launch image on iPhone Plus devices in landscape orientation. (Recommended size: 1920x1080px)
 
-iPhone Retina 6 Plus
-:	Path to a 1242x2208px image. Used as the launch image on retina for iDevices with a 5.5 inch screen (e.g. iPhone 6 Plus).
+wC_hR
+:	Path to image for Compact width and Regular height size class. Used as the launch image on iPhone and iPhone Plus devices in portrait orientation. (Recommended size: 1080x1920px)
 
-iPad
-:	Path to a 768x1004px image. Used as the launch image on retina for non-retina iPads when in portrait.
+wR_hR
+:	Path to image for Regular width and Regular height size class. Used as the launch image on iPad devices in both portrait and landscape orientation. (Recommended size: 2732x2048px)
 
-iPad Landscape
-:	Path to a 1024x748px image. Used as the launch image on retina for non-retina iPads when in landscape.
 
-iPad Retina
-:	Path to a 1536x2008px image. Used as the launch image on retina for retina iPads when in portrait.
 
-iPad Landscape Retina
-:	Path to a 2048x1496px image. Used as the launch image on retina for retina iPads when in landscape.
-
-> ::Note:: All 7 iOS images must be defined for any to be included in iOS builds.
+### Android
 
 Android, Android Landscape
 :	Launchimages for Android devices.
@@ -57,7 +50,7 @@ Android, Android Landscape
 	The solid color to use behind this launch image can be configured with
 	the **Background Color** configuration option.
 
-> ::Note:: Both Android images must be defined for Android builds.
+> ::Note:: All images must be defined for a given platform in order to build successfully.
 
 Background Color
 :	The color to be shown behind the image if it doesn't fit the screen exactly, to be specified using
@@ -70,6 +63,9 @@ Background Size
 Hide Manually
 :	Setting this to `true` will prevent the automatic hiding of the launch image done by default,
 	the launchimage will be hidden when you call [forge.launchimage.hide](index.html#forgelaunchimagehidesuccess-error).
+
+> ::Note:: Use PNG format for all launch images, as it is required on at least iOS and your app
+may not be submittable to the App Store otherwise.
 
 ##API
 

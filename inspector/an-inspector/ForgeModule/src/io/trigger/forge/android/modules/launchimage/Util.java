@@ -1,8 +1,9 @@
 package io.trigger.forge.android.modules.launchimage;
 
+import com.google.gson.JsonObject;
+
 import io.trigger.forge.android.core.ForgeApp;
 import io.trigger.forge.android.util.BitmapUtil;
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -20,43 +21,43 @@ import android.widget.RelativeLayout;
  */
 enum BackgroundSize {
 	/**
-     * Center the image in the view. 
-	 * Perform no scaling if image is smaller than the screen else 
+	 * Center the image in the view.
+	 * Perform no scaling if image is smaller than the screen else
 	 * the image will be proportionally scaled down to fit the screen
-     */
-	AUTO("auto"), 
+	 */
+	AUTO("auto"),
 	/**
-     * Scale the image uniformly (maintain the image's aspect ratio) so
-     * that both dimensions (width and height) of the image will be equal
-     * to or larger than the corresponding dimension of the screen.
-     * The image is then centered in the view.
-     */
-    COVER("cover");
-    
-    private final String value;
+	 * Scale the image uniformly (maintain the image's aspect ratio) so
+	 * that both dimensions (width and height) of the image will be equal
+	 * to or larger than the corresponding dimension of the screen.
+	 * The image is then centered in the view.
+	 */
+	COVER("cover");
 
-    private BackgroundSize(final String value) {
-        this.value = value;
-    }
+	private final String value;
 
-    public String getValue() {
-        return value;
-    }
+	private BackgroundSize(final String value) {
+		this.value = value;
+	}
 
-    @Override
-    public String toString() {
-        return getValue();
-    }
-    
-    public static BackgroundSize parseBackgroundSize(String backgroundSizeValue) {
-    	if (backgroundSizeValue != null) {
-    		for (BackgroundSize backgroundSize : BackgroundSize.values()) {
-    			if (backgroundSizeValue.equalsIgnoreCase(backgroundSize.getValue())) {
-    				return backgroundSize;
-    			}
-    		}
-        }
-    	return null;
+	public String getValue() {
+		return value;
+	}
+
+	@Override
+	public String toString() {
+		return getValue();
+	}
+
+	public static BackgroundSize parseBackgroundSize(String backgroundSizeValue) {
+		if (backgroundSizeValue != null) {
+			for (BackgroundSize backgroundSize : BackgroundSize.values()) {
+				if (backgroundSizeValue.equalsIgnoreCase(backgroundSize.getValue())) {
+					return backgroundSize;
+				}
+			}
+		}
+		return null;
    }
 }
 
@@ -71,7 +72,8 @@ public class Util {
 		launchImage = new Dialog(activity, theme);
 		RelativeLayout layout = new RelativeLayout(activity);
 		try {
-			layout.setBackgroundColor(Color.parseColor(ForgeApp.configForPlugin("launchimage").get("background-color").getAsString()));
+			JsonObject config = ForgeApp.configForModule("launchimage");
+			layout.setBackgroundColor(Color.parseColor(config.getAsJsonObject("android").get("background-color").getAsString()));
 		} catch (Exception e) {
 			layout.setBackgroundColor(Color.BLACK);
 		}
@@ -79,7 +81,8 @@ public class Util {
 		launchImage.setCancelable(false);
 		BackgroundSize backgroundSize = null;
 		try {
-			backgroundSize = BackgroundSize.parseBackgroundSize(ForgeApp.configForPlugin("launchimage").get("background-size").getAsString());
+			JsonObject config = ForgeApp.configForModule("launchimage");
+			backgroundSize = BackgroundSize.parseBackgroundSize(config.getAsJsonObject("android").get("background-size").getAsString());
 		} catch (Exception e) {
 			// do nothing
 		} finally {
@@ -102,13 +105,14 @@ public class Util {
 		try {
 			Display display = ((WindowManager) activity.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
 			Drawable d = null;
+			JsonObject config = ForgeApp.configForModule("launchimage");
 			if (display.getWidth() < display.getHeight()) {
-				d = BitmapUtil.drawableFromStream(activity, activity.getAssets().open(ForgeApp.configForModule("launchimage").get("android").getAsString()));
+				d = BitmapUtil.drawableFromStream(activity, activity.getAssets().open("src/" + config.getAsJsonObject("android").get("portrait").getAsString()));
 			} else {
-				d = BitmapUtil.drawableFromStream(activity, activity.getAssets().open(ForgeApp.configForModule("launchimage").get("android-landscape").getAsString()));
+				d = BitmapUtil.drawableFromStream(activity, activity.getAssets().open("src/" + config.getAsJsonObject("android").get("landscape").getAsString()));
 			}
 			splashImage.setImageDrawable(d);
-		} catch (Exception e) {	
+		} catch (Exception e) {
 			// Splash screen image load failure - use default
 			splashImage.setImageResource(ForgeApp.getResourceId("splash", "drawable"));
 		}

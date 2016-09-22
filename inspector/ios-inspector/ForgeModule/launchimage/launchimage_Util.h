@@ -10,7 +10,6 @@
 
 @interface launchimage_Util : NSObject
 
-+ (void) updateLaunchImageOrientation:(UIInterfaceOrientation)toInterfaceOrientation;
 + (void) showLaunchImage;
 + (void) hideLaunchImage;
 + (bool) haveAppLauncher;
