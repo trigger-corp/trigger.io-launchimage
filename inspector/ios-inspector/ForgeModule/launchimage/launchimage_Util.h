@@ -10,6 +10,7 @@
 
 @interface launchimage_Util : NSObject
 
++ (void) initializeLaunchImage;
 + (void) showLaunchImage;
 + (void) hideLaunchImage;
 + (bool) haveAppLauncher;

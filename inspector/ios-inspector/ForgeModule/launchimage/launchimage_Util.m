@@ -10,19 +10,27 @@
 
 @implementation launchimage_Util
 
-UIStoryboard *launchScreenStoryBoard;
-UIViewController *launchScreenViewController;
+UIStoryboard *launchScreenStoryBoard = nil;
+UIViewController *launchScreenViewController = nil;
+
++ (void) initializeLaunchImage {
+	launchScreenStoryBoard = [UIStoryboard storyboardWithName:@"Launch Screen Manual" bundle:nil];
+	launchScreenViewController = [launchScreenStoryBoard instantiateViewControllerWithIdentifier:@"LaunchScreenManual"];
+}
 
 + (void) showLaunchImage {
-    launchScreenStoryBoard = [UIStoryboard storyboardWithName:@"Launch Screen Manual" bundle:nil];
-    launchScreenViewController = [launchScreenStoryBoard instantiateViewControllerWithIdentifier:@"LaunchScreenManual"];
-    [[[ForgeApp sharedApp] viewController] presentViewController:launchScreenViewController animated:NO completion:NULL];
+    if (launchScreenViewController == nil) {
+		[launchimage_Util initializeLaunchImage];
+	}
+	[[[[ForgeApp sharedApp] appDelegate] window] addSubview:launchScreenViewController.view];
+	[[[[ForgeApp sharedApp] appDelegate] window] bringSubviewToFront:launchScreenViewController.view];
 }
 
 + (void) hideLaunchImage {
     if (launchScreenViewController != nil) {
-        [[[ForgeApp sharedApp] viewController] dismissViewControllerAnimated:NO completion:nil];
-        launchScreenViewController = nil;
+		[[[[ForgeApp sharedApp] appDelegate] window] sendSubviewToBack:launchScreenViewController.view];
+		[launchScreenViewController.view removeFromSuperview];
+		launchScreenViewController = nil;
     }
 }
 

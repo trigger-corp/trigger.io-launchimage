@@ -15,6 +15,7 @@ bool initialStartup = true;
 
 + (void)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     initialStartup = true;
+    [launchimage_Util initializeLaunchImage];
 }
 
 + (void)applicationDidBecomeActive:(UIApplication *)application {
