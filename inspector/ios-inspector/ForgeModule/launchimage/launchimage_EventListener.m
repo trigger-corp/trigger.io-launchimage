@@ -13,12 +13,14 @@ bool initialStartup = true;
 
 @implementation launchimage_EventListener
 
-+ (void)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+// First chance to execute code
++ (NSNumber*)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     initialStartup = true;
     [launchimage_Util initializeLaunchImage];
+    return @YES;
 }
 
-+ (void)applicationDidBecomeActive:(UIApplication *)application {
++ (void)launchImageLoad {
     if (initialStartup) {
         [launchimage_Util showLaunchImage];
     }

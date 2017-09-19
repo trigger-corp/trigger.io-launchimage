@@ -1,20 +1,20 @@
 {
-	"this_module": {
-		"config": {
-			"ios": {
-				"wC_hC": "fixtures/launchimage/1334x750.png",
-				"wR_hC": "fixtures/launchimage/1920x1080.png",
-				"wC_hR": "fixtures/launchimage/1080x1920.png",
-				"wR_hR": "fixtures/launchimage/2732x2048.png"
-			},
-			"android": {
-				"portrait": "fixtures/launchimage/android.png",
-				"landscape": "fixtures/launchimage/android-landscape.png",
-				"background-color": "#AA3300",
-				"background-size": "auto"
-			},
-			"hide-manually": false
-		}
-	},
-	"modules": {}
+    "this_module": {
+        "config": {
+            "ios": {
+                "wC_hC": "fixtures/launchimage/1334x750.png",
+                "wR_hC": "fixtures/launchimage/1920x1080.png",
+                "wC_hR": "fixtures/launchimage/1080x1920.png",
+                "wR_hR": "fixtures/launchimage/2732x2048.png"
+            },
+            "android": {
+                "portrait": "fixtures/launchimage/android.png",
+                "landscape": "fixtures/launchimage/android-landscape.png",
+                "background-color": "#AA3300",
+                "background-size": "auto"
+            },
+            "hide-manually": false
+        }
+    },
+    "modules": {}
 }

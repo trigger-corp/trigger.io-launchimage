@@ -1,34 +1,34 @@
 [
-	{
-		"do": {
-			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.wC_hC}}",
-				"dest": "wC_hC.png"
-			}
-		}
-	},
-	{
-		"do": {
-			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.wR_hC}}",
-				"dest": "wR_hC.png"
-			}
-		}
-	},
-	{
-		"do": {
-			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.wC_hR}}",
-				"dest": "wC_hR.png"
-			}
-		}
-	},
-	{
-		"do": {
-			"copy_file_from_src": {
-				"filename": "{{modules.launchimage.config.ios.wR_hR}}",
-				"dest": "wR_hR.png"
-			}
-		}
-	}
+    {
+        "do": {
+            "copy_file_from_src": {
+                "filename": "{{modules.launchimage.config.ios.wC_hC}}",
+                "dest": "wC_hC.png"
+            }
+        }
+    },
+    {
+        "do": {
+            "copy_file_from_src": {
+                "filename": "{{modules.launchimage.config.ios.wR_hC}}",
+                "dest": "wR_hC.png"
+            }
+        }
+    },
+    {
+        "do": {
+            "copy_file_from_src": {
+                "filename": "{{modules.launchimage.config.ios.wC_hR}}",
+                "dest": "wC_hR.png"
+            }
+        }
+    },
+    {
+        "do": {
+            "copy_file_from_src": {
+                "filename": "{{modules.launchimage.config.ios.wR_hR}}",
+                "dest": "wR_hR.png"
+            }
+        }
+    }
 ]

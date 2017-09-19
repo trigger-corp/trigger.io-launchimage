@@ -20,10 +20,10 @@ UIViewController *launchScreenViewController = nil;
 
 + (void) showLaunchImage {
     if (launchScreenViewController == nil) {
-		[launchimage_Util initializeLaunchImage];
-	}
-	[[[[ForgeApp sharedApp] appDelegate] window] addSubview:launchScreenViewController.view];
-	[[[[ForgeApp sharedApp] appDelegate] window] bringSubviewToFront:launchScreenViewController.view];
+        [launchimage_Util initializeLaunchImage];
+    }
+    [[[[ForgeApp sharedApp] appDelegate] window] addSubview:launchScreenViewController.view];
+    [[[[ForgeApp sharedApp] appDelegate] window] bringSubviewToFront:launchScreenViewController.view];
 }
 
 + (void) hideLaunchImage {
